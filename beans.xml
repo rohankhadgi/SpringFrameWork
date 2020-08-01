@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "unlimitedC" class = "com.MultiCarrier.UnlimitedCalls"></bean>
+    <bean id = "unlimitedT" class = "com.MultiCarrier.UnlimitedTexts"></bean>
+    <bean id = "volumeD" class = "com.MultiCarrier.VolumeData"></bean>
+    <bean id = "unlimitedD" class = "com.MultiCarrier.UnlimitedData"></bean>
+
+    <bean id = "att" class= "com.MultiCarrier.Att">
+        <property name="uc" ref="unlimitedC"></property>
+        <property name="ut" ref="unlimitedT"></property>
+        <property name="vd" ref="volumeD"></property>
+        <property name="ud" ref="unlimitedD"></property>
+    </bean>
+
+    <bean id = "tmobile" class= "com.MultiCarrier.Tmobile">
+        <property name="uc" ref="unlimitedC"></property>
+        <property name="ut" ref="unlimitedT"></property>
+        <property name="vd" ref="volumeD"></property>
+        <property name="ud" ref="unlimitedD"></property>
+    </bean>
+
+    <bean id = "verizon" class= "com.MultiCarrier.Verizon">
+        <property name="uc" ref="unlimitedC"></property>
+        <property name="ut" ref="unlimitedT"></property>
+        <property name="vd" ref="volumeD"></property>
+        <property name="ud" ref="unlimitedD"></property>
+    </bean>
+
+    <bean id = "attUser" class = "com.MultiCarrier.User1">
+        <property name="services" ref="att"></property>
+    </bean>
+    <bean id = "tMobileUser" class = "com.MultiCarrier.User2">
+        <property name="services" ref="tmobile"></property>
+    </bean>
+    <bean id="verizonUser" class = "com.MultiCarrier.User3">
+        <property name="services" ref="verizon"></property>
+    </bean>
+
+</beans>
